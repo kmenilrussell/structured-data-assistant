@@ -1,141 +1,249 @@
-# 🚀 Welcome to Z.ai Code Scaffold
+# Structured Data Assistant
 
-A modern, production-ready web application scaffold powered by cutting-edge technologies, designed to accelerate your development with [Z.ai](https://chat.z.ai)'s AI-powered coding assistance.
+Guided JSON-LD builder for SEO workflows. Create valid, copy-pastable structured data (FAQPage, Event, Organization, LocalBusiness, Article, etc.), validate it, and drop it into WordPress/Elementor in seconds. Designed as an original internal tool for agencies.
 
-## ✨ Technology Stack
-
-This scaffold provides a robust foundation built with:
-
-### 🎯 Core Framework
-- **⚡ Next.js 15** - The React framework for production with App Router
-- **📘 TypeScript 5** - Type-safe JavaScript for better developer experience
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
-
-### 🧩 UI Components & Styling
-- **🧩 shadcn/ui** - High-quality, accessible components built on Radix UI
-- **🎯 Lucide React** - Beautiful & consistent icon library
-- **🌈 Framer Motion** - Production-ready motion library for React
-- **🎨 Next Themes** - Perfect dark mode in 2 lines of code
-
-### 📋 Forms & Validation
-- **🎣 React Hook Form** - Performant forms with easy validation
-- **✅ Zod** - TypeScript-first schema validation
-
-### 🔄 State Management & Data Fetching
-- **🐻 Zustand** - Simple, scalable state management
-- **🔄 TanStack Query** - Powerful data synchronization for React
-- **🌐 Axios** - Promise-based HTTP client
-
-### 🗄️ Database & Backend
-- **🗄️ Prisma** - Next-generation Node.js and TypeScript ORM
-- **🔐 NextAuth.js** - Complete open-source authentication solution
-
-### 🎨 Advanced UI Features
-- **📊 TanStack Table** - Headless UI for building tables and datagrids
-- **🖱️ DND Kit** - Modern drag and drop toolkit for React
-- **📊 Recharts** - Redefined chart library built with React and D3
-- **🖼️ Sharp** - High performance image processing
-
-### 🌍 Internationalization & Utilities
-- **🌍 Next Intl** - Internationalization library for Next.js
-- **📅 Date-fns** - Modern JavaScript date utility library
-- **🪝 ReactUse** - Collection of essential React hooks for modern development
-
-## 🎯 Why This Scaffold?
-
-- **🏎️ Fast Development** - Pre-configured tooling and best practices
-- **🎨 Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- **🔒 Type Safety** - Full TypeScript configuration with Zod validation
-- **📱 Responsive** - Mobile-first design principles with smooth animations
-- **🗄️ Database Ready** - Prisma ORM configured for rapid backend development
-- **🔐 Auth Included** - NextAuth.js for secure authentication flows
-- **📊 Data Visualization** - Charts, tables, and drag-and-drop functionality
-- **🌍 i18n Ready** - Multi-language support with Next Intl
-- **🚀 Production Ready** - Optimized build and deployment settings
-- **🤖 AI-Friendly** - Structured codebase perfect for AI assistance
-
-## 🚀 Quick Start
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see your application running.
-
-## 🤖 Powered by Z.ai
-
-This scaffold is optimized for use with [Z.ai](https://chat.z.ai) - your AI assistant for:
-
-- **💻 Code Generation** - Generate components, pages, and features instantly
-- **🎨 UI Development** - Create beautiful interfaces with AI assistance  
-- **🔧 Bug Fixing** - Identify and resolve issues with intelligent suggestions
-- **📝 Documentation** - Auto-generate comprehensive documentation
-- **🚀 Optimization** - Performance improvements and best practices
-
-Ready to build something amazing? Start chatting with Z.ai at [chat.z.ai](https://chat.z.ai) and experience the future of AI-powered development!
-
-## 📁 Project Structure
-
-```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
-```
-
-## 🎨 Available Features & Components
-
-This scaffold includes a comprehensive set of modern web development tools:
-
-### 🧩 UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
-
-### 📊 Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
-
-### 🎨 Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
-
-### 🔐 Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Axios + TanStack Query
-- **State Management**: Simple and scalable with Zustand
-
-### 🌍 Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
-
-## 🤝 Get Started with Z.ai
-
-1. **Clone this scaffold** to jumpstart your project
-2. **Visit [chat.z.ai](https://chat.z.ai)** to access your AI coding assistant
-3. **Start building** with intelligent code generation and assistance
-4. **Deploy with confidence** using the production-ready setup
+> Why JSON-LD? Google supports JSON-LD for structured data and recommends using whatever format is easiest to implement—JSON-LD is typically the simplest. Adding valid structured data helps search engines understand your content and can make pages **eligible** for rich results. It doesn’t guarantee them. ([Google for Developers][1])
 
 ---
 
-Built with ❤️ for the developer community. Supercharged by [Z.ai](https://chat.z.ai) 🚀
+## Features
+
+* **Schema type selector**: FAQPage, Event, Organization, LocalBusiness, Article (more easy to add).
+* **Dynamic forms → Live JSON-LD**: Field-driven UI generates a real-time `<script type="application/ld+json">…</script>`.
+* **Instant validation**: One-click open in Google’s Rich Results Test to verify eligibility/errors. ([search.google.com][2])
+* **Copy & export**: Copy to clipboard or download `.json`.
+* **Reusable templates** (optional backend): Save/load presets per client/campaign.
+* **WordPress/Elementor friendly**: Paste into Elementor **HTML widget** or add via **Custom Code** (Pro) / **`wp_head`** hook. ([Elementor][3], [WordPress Developer Resources][4])
+
+---
+
+## Tech Stack
+
+* **Frontend**: React + TypeScript + Vite (or Next.js)
+* **State/Forms**: React Hook Form + Zod
+* **Validation**: Linkout to Google Rich Results Test
+* **Optional backend**: Node/Express + MongoDB (only if you want sign-in & template persistence)
+
+> If you later generate the schema in the browser (e.g., template → JSON-LD at runtime), Google can read structured data generated by your JavaScript when it renders the page, provided it’s properly output in a `<script type="application/ld+json">`. ([Google for Developers][5])
+
+---
+
+## Quick Start (Frontend-only)
+
+> Requires **Node 18+** and **pnpm** (or npm/yarn).
+
+```bash
+# 1) Create the app
+pnpm create vite@latest structured-data-assistant --template react-ts
+cd structured-data-assistant
+
+# 2) Install deps
+pnpm add react-hook-form zod copy-to-clipboard
+
+# 3) (Optional) Add UI helpers
+pnpm add clsx
+
+# 4) Dev server
+pnpm dev
+```
+
+Open [http://localhost:5173](http://localhost:5173)
+
+### Project structure (suggested)
+
+```
+src/
+  components/
+    SchemaPicker.tsx
+    SchemaForm.tsx
+    JsonPreview.tsx
+    CopyBar.tsx
+  lib/
+    schemaBuilders/
+      faq.ts
+      event.ts
+      organization.ts
+      localBusiness.ts
+      article.ts
+    types.ts
+    validators.ts
+  pages/
+    Home.tsx
+  App.tsx
+```
+
+---
+
+## How to Use
+
+1. **Pick a schema type** from the dropdown (e.g., *FAQPage* for an FAQ block).
+   (Reference definitions at Schema.org if you need exact properties.) ([Schema.org][6])
+2. **Fill fields** (the form adapts by type).
+3. **Review the JSON-LD** in the live preview.
+4. **Copy or download** the generated code.
+5. **Validate** by clicking **“Validate in Google Rich Results Test”**. Fix any reported issues until green. ([search.google.com][2])
+6. **Embed in WordPress/Elementor** (see below).
+
+---
+
+## Embedding in WordPress / Elementor
+
+You have three common options—choose the one that fits your site:
+
+### A) Elementor HTML widget (no plugin code changes)
+
+1. In the Elementor editor, drag the **HTML** widget to your page.
+2. Paste the entire `<script type="application/ld+json">…</script>` block.
+3. Update/publish. ([Elementor][3])
+
+### B) Elementor **Custom Code** (Elementor Pro)
+
+1. Go to **Elementor → Custom Code → Add New**.
+2. Paste the JSON-LD `<script>` block and choose location (usually **Head**).
+3. Set priority and publish. ([Elementor][7])
+
+### C) WordPress theme/plugin via `wp_head`
+
+If you want site-wide injection (e.g., Organization schema):
+
+```php
+// functions.php (child theme) or a small must-use plugin
+add_action('wp_head', function () {
+  $schema = [
+    '@context' => 'https://schema.org',
+    '@type'    => 'Organization',
+    'name'     => 'Your Company',
+    'url'      => home_url('/'),
+    'logo'     => 'https://example.com/logo.png'
+  ];
+  echo '<script type="application/ld+json">'.wp_json_encode($schema).'</script>';
+});
+```
+
+The `wp_head` hook runs inside the document `<head>…</head>` in WordPress themes. ([WordPress Developer Resources][4])
+
+> **Note:** Rich results aren’t guaranteed—even for valid markup. Eligibility depends on many factors; follow Google’s guidelines for best results. ([Google for Developers][8])
+
+---
+
+## Example Output (FAQPage)
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need a plugin to add structured data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. You can paste JSON-LD into Elementor HTML or add it via the wp_head hook."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does structured data guarantee rich results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It makes pages eligible, but Google decides what to show."
+      }
+    }
+  ]
+}
+</script>
+```
+
+---
+
+## Optional Backend (Templates & Teams)
+
+If you want log-in and shared templates:
+
+```bash
+# In a /server folder
+pnpm init
+pnpm add express cors zod mongoose
+node server.js
+```
+
+* `POST /templates` – save template
+* `GET /templates/:user` – list templates
+* `PUT /templates/:id` – update
+* `DELETE /templates/:id` – delete
+
+Front-end calls these endpoints to load/save template JSON safely.
+
+---
+
+## Scripts
+
+```bash
+# dev
+pnpm dev
+
+# type-check
+pnpm typecheck
+
+# build
+pnpm build
+
+# preview production build (Vite)
+pnpm preview
+
+# lint (if using ESLint)
+pnpm lint
+```
+
+---
+
+## Testing & Validation
+
+* Unit test schema builders (Zod schemas for inputs).
+* Always validate final output in **Rich Results Test** before shipping. ([search.google.com][2])
+
+---
+
+## Best-Practice Notes
+
+* Keep JSON-LD **accurate and representative** of the page content; include required properties for each type. ([Google for Developers][1])
+* Use Schema.org to confirm property names and types for **FAQPage**, **Organization**, **LocalBusiness**, **Event**, **Article**, etc. ([Schema.org][6])
+* Remember: structured data **does not guarantee** a rich result; it only enables eligibility. ([Google for Developers][8])
+
+---
+
+## Roadmap
+
+* More schema types (Product, BreadcrumbList, Review, JobPosting)
+* Import from URL (auto-detect content and prefill)
+* Team workspaces & approvals
+* One-click WordPress export (Code Snippets JSON or Elementor Custom Code export)
+
+---
+
+## Security & Privacy
+
+* No external keys required.
+* If you enable the optional backend, store only template JSON and basic user IDs; no page content is scraped or stored.
+
+---
+
+## License
+
+MIT (or your preference)
+
+---
+
+## Acknowledgments
+
+* **Google Search Central** docs for structured data & Rich Results Test. ([Google for Developers][1], [search.google.com][2])
+* **Schema.org** for vocabularies. ([Schema.org][6])
+* **Elementor** docs (HTML widget & Custom Code) and **WordPress** `wp_head` reference. ([Elementor][3], [WordPress Developer Resources][4])
+
+---
+<img width="1512" height="807" alt="Screenshot 2025-09-02 at 9 56 31 AM" src="https://github.com/user-attachments/assets/a049549b-88d7-4c11-a341-0d61f2afb0e2" />
+<img width="1512" height="809" alt="Screenshot 2025-09-02 at 9 56 38 AM" src="https://github.com/user-attachments/assets/34f32c9e-1923-46b0-a535-f9aa71f13242" />
+<img width="1500" height="809" alt="Screenshot 2025-09-02 at 9 56 51 AM" src="https://github.com/user-attachments/assets/312575b0-b9f9-4275-8e39-cf1f7679568d" />
+<img width="1505" height="791" alt="Screenshot 2025-09-02 at 9 59 31 AM" src="https://github.com/user-attachments/assets/1c19d96e-282c-4fcb-816d-23c47051e7f5" />
+
